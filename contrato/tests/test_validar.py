@@ -33,3 +33,46 @@ def test_schema_funcao_e_emocao_invalidas():
     erros = validar.validar_schema(d)
     assert any("funcao_retencao" in e for e in erros)
     assert any("emocao" in e for e in erros)
+
+
+import enums
+
+
+def test_retencao_exemplo_aprova():
+    rel = validar.validar(doc_ok())
+    assert rel["ok"] is True, rel["erros"]
+
+
+def test_retencao_sem_promessa_reprova():
+    d = doc_ok(); d["promessa_central"] = ""
+    erros, _ = validar.validar_retencao(d)
+    assert any("promessa" in e for e in erros)
+
+
+def test_retencao_deserto_reprova():
+    d = doc_ok(); d["beats"][0]["loop"] = {"abre": None, "fecha": None}
+    erros, _ = validar.validar_retencao(d)
+    assert any("deserto" in e for e in erros)
+
+
+def test_retencao_promessa_fechada_cedo_reprova():
+    d = doc_ok()
+    d["beats"][4]["loop"] = {"abre": "vinculo-neytiri", "fecha": "promessa-central"}
+    erros, _ = validar.validar_retencao(d)
+    assert any("promessa-central fechada cedo" in e for e in erros)
+
+
+def test_retencao_sem_climax_reprova():
+    d = doc_ok()
+    for b in d["beats"]:
+        if b["funcao_retencao"] in ("climax", "payoff"):
+            b["funcao_retencao"] = "respiro"
+    erros, _ = validar.validar_retencao(d)
+    assert any("climax/payoff" in e for e in erros)
+
+
+def test_validar_integra_schema_e_retencao():
+    d = doc_ok(); d["beats"][0]["emocao"] = "raiva"  # erro de schema
+    rel = validar.validar(d)
+    assert rel["ok"] is False
+    assert any("emocao" in e for e in rel["erros"])
