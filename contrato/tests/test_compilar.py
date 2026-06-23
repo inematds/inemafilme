@@ -92,3 +92,17 @@ def test_compilar_completo_tem_beats():
     doc = compilar.compilar(MD_BEATS)
     assert len(doc["beats"]) == 2
     assert doc["beats"][0]["funcao_retencao"] == "cold_open"
+
+
+import json
+
+AQUI = os.path.dirname(__file__)
+EXEMPLO = os.path.join(AQUI, "..", "exemplo")
+
+
+def test_golden_exemplo():
+    with open(os.path.join(EXEMPLO, "historia.md"), encoding="utf-8") as f:
+        doc = compilar.compilar(f.read())
+    with open(os.path.join(EXEMPLO, "historia.json"), encoding="utf-8") as f:
+        golden = json.load(f)
+    assert doc == golden

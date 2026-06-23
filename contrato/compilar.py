@@ -108,3 +108,18 @@ def compilar(texto):
     doc["personagens"] = parse_personagens(corpo)
     doc["beats"] = parse_beats(corpo)
     return doc
+
+
+def main(argv):
+    if len(argv) < 2:
+        print("uso: compilar.py historia.md", file=sys.stderr)
+        return 2
+    with open(argv[1], encoding="utf-8") as f:
+        doc = compilar(f.read())
+    json.dump(doc, sys.stdout, ensure_ascii=False, indent=2)
+    print()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))
