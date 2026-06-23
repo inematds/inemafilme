@@ -47,10 +47,64 @@ def parse_personagens(corpo):
     return out
 
 
+def _num(v):
+    if v is None:
+        return None
+    f = float(v)
+    return int(f) if f.is_integer() else f
+
+
+def parse_beats(corpo):
+    partes = re.split(r"(<!--\s*beat:.*?-->)", corpo, flags=re.DOTALL)
+    beats = []
+    ordem = 0
+    i = 1
+    while i < len(partes):
+        cab = partes[i]
+        corpo_beat = partes[i + 1] if i + 1 < len(partes) else ""
+        i += 2
+        ordem += 1
+        kv = _kv(COMENT.match(cab).group(2))
+        beat = {
+            "id": kv.get("id") or f"b{ordem:02d}",
+            "ato": int(kv.get("ato") or 1),
+            "ordem": int(kv.get("ordem") or ordem),
+            "funcao_retencao": kv.get("retencao"),
+            "emocao": kv.get("emocao"),
+            "tempo_s": _num(kv.get("tempo_s")),
+            "loop": {"abre": None, "fecha": None},
+            "cena": {},
+            "falas": [],
+        }
+        for tipo, conteudo in COMENT.findall(corpo_beat):
+            if tipo == "loop":
+                lk = _kv(conteudo)
+                beat["loop"] = {"abre": lk.get("abre"), "fecha": lk.get("fecha")}
+            elif tipo == "cena":
+                ck = _kv(conteudo)
+                pers = ck.get("personagens")
+                beat["cena"] = {
+                    "descricao_visual": ck.get("descricao"),
+                    "ambiente": ck.get("ambiente"),
+                    "personagens_em_cena": [p.strip() for p in pers.split(",")] if pers else [],
+                    "look_sugerido": ck.get("look"),
+                }
+        for linha in corpo_beat.splitlines():
+            linha = linha.strip()
+            if linha.startswith(">"):
+                beat["falas"].append({"quem": "narrador", "texto": linha[1:].strip()})
+            else:
+                mf = re.match(r"^\[([^\]]+)\]:\s*(.*)$", linha)
+                if mf:
+                    beat["falas"].append({"quem": mf.group(1).strip().lower(), "texto": mf.group(2).strip()})
+        beats.append(beat)
+    return beats
+
+
 def compilar(texto):
     header, corpo = parse_frontmatter(texto)
     doc = {"versao_contrato": VERSAO_CONTRATO}
     doc.update(header)
     doc["personagens"] = parse_personagens(corpo)
-    doc["beats"] = []  # preenchido na Task 3
+    doc["beats"] = parse_beats(corpo)
     return doc
