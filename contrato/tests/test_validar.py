@@ -90,3 +90,16 @@ def test_cli_aprova_exemplo():
     )
     assert r.returncode == 0, r.stdout + r.stderr
     assert "OK" in r.stdout
+
+
+def test_exemplo_exercita_retencao():
+    d = doc_ok()
+    funcs = {b["funcao_retencao"] for b in d["beats"]}
+    for obrig in ("cold_open", "promessa", "escalada", "virada", "climax", "payoff"):
+        assert obrig in funcs, f"exemplo nao cobre {obrig}"
+    emocoes = {b["emocao"] for b in d["beats"]}
+    assert len(emocoes) >= 6, "exemplo pouco variado emocionalmente"
+    abre = [b["id"] for b in d["beats"] if enums.ID_PROMESSA in (b["loop"] or {}).get("abre", [])]
+    fecha = [b for b in d["beats"] if enums.ID_PROMESSA in (b["loop"] or {}).get("fecha", [])]
+    assert abre and fecha
+    assert fecha[0]["funcao_retencao"] == "payoff"
