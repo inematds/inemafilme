@@ -50,14 +50,14 @@ def test_retencao_sem_promessa_reprova():
 
 
 def test_retencao_deserto_reprova():
-    d = doc_ok(); d["beats"][0]["loop"] = {"abre": None, "fecha": None}
+    d = doc_ok(); d["beats"][0]["loop"] = {"abre": [], "fecha": []}
     erros, _ = validar.validar_retencao(d)
     assert any("deserto" in e for e in erros)
 
 
 def test_retencao_promessa_fechada_cedo_reprova():
     d = doc_ok()
-    d["beats"][4]["loop"] = {"abre": "vinculo-neytiri", "fecha": "promessa-central"}
+    d["beats"][4]["loop"] = {"abre": ["vinculo-neytiri"], "fecha": ["promessa-central"]}
     erros, _ = validar.validar_retencao(d)
     assert any("promessa-central fechada cedo" in e for e in erros)
 
@@ -76,3 +76,17 @@ def test_validar_integra_schema_e_retencao():
     rel = validar.validar(d)
     assert rel["ok"] is False
     assert any("emocao" in e for e in rel["erros"])
+
+
+import subprocess
+
+CONTRATO_DIR = os.path.join(AQUI, "..")
+
+
+def test_cli_aprova_exemplo():
+    r = subprocess.run(
+        [sys.executable, "validar.py", "exemplo/historia.json"],
+        cwd=CONTRATO_DIR, capture_output=True, text=True,
+    )
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "OK" in r.stdout

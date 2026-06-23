@@ -54,6 +54,11 @@ def _num(v):
     return int(f) if f.is_integer() else f
 
 
+def _lista(v):
+    """'a, b' -> ['a', 'b']; None/'' -> []. Um beat pode abrir/fechar varios loops."""
+    return [x.strip() for x in v.split(",")] if v else []
+
+
 def parse_beats(corpo):
     partes = re.split(r"(<!--\s*beat:.*?-->)", corpo, flags=re.DOTALL)
     beats = []
@@ -72,14 +77,14 @@ def parse_beats(corpo):
             "funcao_retencao": kv.get("retencao"),
             "emocao": kv.get("emocao"),
             "tempo_s": _num(kv.get("tempo_s")),
-            "loop": {"abre": None, "fecha": None},
+            "loop": {"abre": [], "fecha": []},
             "cena": {},
             "falas": [],
         }
         for tipo, conteudo in COMENT.findall(corpo_beat):
             if tipo == "loop":
                 lk = _kv(conteudo)
-                beat["loop"] = {"abre": lk.get("abre"), "fecha": lk.get("fecha")}
+                beat["loop"] = {"abre": _lista(lk.get("abre")), "fecha": _lista(lk.get("fecha"))}
             elif tipo == "cena":
                 ck = _kv(conteudo)
                 pers = ck.get("personagens")

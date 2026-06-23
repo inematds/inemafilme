@@ -70,7 +70,7 @@ def test_beat_meta_e_loop():
     assert b["funcao_retencao"] == "cold_open"
     assert b["emocao"] == "tensao"
     assert b["tempo_s"] == 6
-    assert b["loop"] == {"abre": "mundo-perigoso", "fecha": None}
+    assert b["loop"] == {"abre": ["mundo-perigoso"], "fecha": []}
 
 
 def test_beat_cena():

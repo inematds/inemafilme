@@ -44,11 +44,11 @@ look_padrao: cinema-dramatico
 > Mas os humanos vieram pelo tesouro. E o tesouro estava embaixo do lar dela.
 
 <!-- beat: id=b07 | ato=3 | retencao=climax | emocao=euforia | tempo_s=8 -->
-<!-- loop: fecha=lealdade-em-jogo | fecha=guerra-iminente -->
+<!-- loop: fecha=lealdade-em-jogo,guerra-iminente -->
 <!-- cena: descricao=exercito alienigena montado em feras voadoras contra naves | ambiente=ceu de Pandora | personagens=jake,neytiri,quaritch -->
 > Jake escolheu seu lado. Liderou os Na'vi contra o ferro e o fogo dos seus.
 
 <!-- beat: id=b08 | ato=3 | retencao=payoff | emocao=esperanca | tempo_s=8 -->
-<!-- loop: fecha=promessa-central | fecha=vinculo-neytiri -->
+<!-- loop: fecha=promessa-central,vinculo-neytiri -->
 <!-- cena: descricao=corpo humano sendo deixado para tras enquanto os olhos alienigenas se abrem | ambiente=arvore das almas | personagens=jake,neytiri -->
 > No fim, ele deixou de ser humano. E nasceu, de olhos abertos, no mundo que escolheu.

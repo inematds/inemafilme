@@ -50,15 +50,14 @@ def validar_retencao(doc, max_planos=160, tolerancia=0.15):
     abertos = {}
     for idx, b in enumerate(beats):
         loop = b.get("loop") or {}
-        fecha, abre = loop.get("fecha"), loop.get("abre")
-        if fecha:
+        for fecha in (loop.get("fecha") or []):
             if fecha not in abertos:
                 avisos.append(f"beat {b.get('id')}: fecha loop '{fecha}' que nunca abriu")
             else:
                 del abertos[fecha]
             if fecha == ID_PROMESSA and b.get("funcao_retencao") not in PAYOFF:
                 erros.append(f"beat {b.get('id')}: promessa-central fechada cedo (fora de climax/payoff)")
-        if abre:
+        for abre in (loop.get("abre") or []):
             abertos[abre] = idx
         ultimo = idx == len(beats) - 1
         if not ultimo and not abertos:
@@ -93,3 +92,22 @@ def validar(doc, **kw):
         return {"ok": False, "erros": erros, "avisos": []}
     erros_r, avisos = validar_retencao(doc, **kw)
     return {"ok": not erros_r, "erros": erros_r, "avisos": avisos}
+
+
+def main(argv):
+    if len(argv) < 2:
+        print("uso: validar.py historia.json", file=sys.stderr)
+        return 2
+    with open(argv[1], encoding="utf-8") as f:
+        doc = json.load(f)
+    rel = validar(doc)
+    for e in rel["erros"]:
+        print("ERRO:", e)
+    for a in rel["avisos"]:
+        print("aviso:", a)
+    print("OK" if rel["ok"] else "REPROVADO")
+    return 0 if rel["ok"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

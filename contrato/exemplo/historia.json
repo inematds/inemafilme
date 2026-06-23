@@ -31,8 +31,10 @@
       "emocao": "tensao",
       "tempo_s": 6,
       "loop": {
-        "abre": "mundo-perigoso",
-        "fecha": null
+        "abre": [
+          "mundo-perigoso"
+        ],
+        "fecha": []
       },
       "cena": {
         "descricao_visual": "nave humana cruzando o vazio rumo a um gigante gasoso azul",
@@ -55,8 +57,10 @@
       "emocao": "melancolia",
       "tempo_s": 8,
       "loop": {
-        "abre": "promessa-central",
-        "fecha": null
+        "abre": [
+          "promessa-central"
+        ],
+        "fecha": []
       },
       "cena": {
         "descricao_visual": "ex-fuzileiro em cadeira de rodas olhando a chuva pela janela",
@@ -81,8 +85,10 @@
       "emocao": "misterio",
       "tempo_s": 8,
       "loop": {
-        "abre": "ameaca-quaritch",
-        "fecha": null
+        "abre": [
+          "ameaca-quaritch"
+        ],
+        "fecha": []
       },
       "cena": {
         "descricao_visual": "coronel apontando para um mapa da floresta hostil",
@@ -107,8 +113,12 @@
       "emocao": "medo",
       "tempo_s": 8,
       "loop": {
-        "abre": "lealdade-em-jogo",
-        "fecha": "mundo-perigoso"
+        "abre": [
+          "lealdade-em-jogo"
+        ],
+        "fecha": [
+          "mundo-perigoso"
+        ]
       },
       "cena": {
         "descricao_visual": "criatura gigante avancando na selva neon enquanto ele corre",
@@ -133,8 +143,12 @@
       "emocao": "ternura",
       "tempo_s": 8,
       "loop": {
-        "abre": "vinculo-neytiri",
-        "fecha": "ameaca-quaritch"
+        "abre": [
+          "vinculo-neytiri"
+        ],
+        "fecha": [
+          "ameaca-quaritch"
+        ]
       },
       "cena": {
         "descricao_visual": "duas figuras tocando as testas sob arvores bioluminescentes",
@@ -160,8 +174,10 @@
       "emocao": "furia",
       "tempo_s": 6,
       "loop": {
-        "abre": "guerra-iminente",
-        "fecha": null
+        "abre": [
+          "guerra-iminente"
+        ],
+        "fecha": []
       },
       "cena": {
         "descricao_visual": "maquinas humanas derrubando arvores ancestrais em chamas",
@@ -186,8 +202,11 @@
       "emocao": "euforia",
       "tempo_s": 8,
       "loop": {
-        "abre": null,
-        "fecha": "guerra-iminente"
+        "abre": [],
+        "fecha": [
+          "lealdade-em-jogo",
+          "guerra-iminente"
+        ]
       },
       "cena": {
         "descricao_visual": "exercito alienigena montado em feras voadoras contra naves",
@@ -214,8 +233,11 @@
       "emocao": "esperanca",
       "tempo_s": 8,
       "loop": {
-        "abre": null,
-        "fecha": "vinculo-neytiri"
+        "abre": [],
+        "fecha": [
+          "promessa-central",
+          "vinculo-neytiri"
+        ]
       },
       "cena": {
         "descricao_visual": "corpo humano sendo deixado para tras enquanto os olhos alienigenas se abrem",
