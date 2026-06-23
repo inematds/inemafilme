@@ -1,0 +1,259 @@
+{
+  "versao_contrato": "inemafilme.historia/v1",
+  "id": "avatar-mini",
+  "titulo": "Avatar — A Chama e as Cinzas",
+  "logline": "Um fuzileiro paralitico ganha um corpo alienigena e precisa escolher entre dois mundos.",
+  "promessa_central": "Jake vai abandonar os humanos pelos Na'vi — e a que preco?",
+  "duracao_alvo_s": 60,
+  "formato": "16:9",
+  "voz_narrador": "bella",
+  "look_padrao": "cinema-dramatico",
+  "personagens": [
+    {
+      "nome": "jake",
+      "aparencia": "ex-fuzileiro, ~30 anos, cabelo raspado, cicatriz na sobrancelha"
+    },
+    {
+      "nome": "neytiri",
+      "aparencia": "na'vi alta, pele azul luminescente, olhos ambar"
+    },
+    {
+      "nome": "quaritch",
+      "aparencia": "coronel humano, mandibula quadrada, cicatrizes"
+    }
+  ],
+  "beats": [
+    {
+      "id": "b01",
+      "ato": 1,
+      "ordem": 1,
+      "funcao_retencao": "cold_open",
+      "emocao": "tensao",
+      "tempo_s": 6,
+      "loop": {
+        "abre": [
+          "mundo-perigoso"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "nave humana cruzando o vazio rumo a um gigante gasoso azul",
+        "ambiente": "orbita de Pandora",
+        "personagens_em_cena": [],
+        "look_sugerido": "sci-fi-cyberpunk"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Em 2154, a Terra esta morta. O que sobrou da humanidade busca um tesouro a anos-luz de casa."
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "ato": 1,
+      "ordem": 2,
+      "funcao_retencao": "promessa",
+      "emocao": "melancolia",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [
+          "promessa-central"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "ex-fuzileiro em cadeira de rodas olhando a chuva pela janela",
+        "ambiente": "cidade decadente",
+        "personagens_em_cena": [
+          "jake"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Jake Sully perdeu as pernas numa guerra que ja esqueceu o nome. Mas ainda sabe lutar."
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "ato": 1,
+      "ordem": 3,
+      "funcao_retencao": "escalada",
+      "emocao": "misterio",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [
+          "ameaca-quaritch"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "coronel apontando para um mapa da floresta hostil",
+        "ambiente": "base militar",
+        "personagens_em_cena": [
+          "quaritch"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Mandaram-no a um mundo onde o ar mata em quatro minutos. E onde algo o observava."
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "ato": 2,
+      "ordem": 4,
+      "funcao_retencao": "virada",
+      "emocao": "medo",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [
+          "lealdade-em-jogo"
+        ],
+        "fecha": [
+          "mundo-perigoso"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "criatura gigante avancando na selva neon enquanto ele corre",
+        "ambiente": "floresta de Pandora",
+        "personagens_em_cena": [
+          "jake"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Na primeira noite, a floresta tentou devora-lo. Mas uma cacadora o salvou."
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "ato": 2,
+      "ordem": 5,
+      "funcao_retencao": "respiro",
+      "emocao": "ternura",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [
+          "vinculo-neytiri"
+        ],
+        "fecha": [
+          "ameaca-quaritch"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "duas figuras tocando as testas sob arvores bioluminescentes",
+        "ambiente": "clareira sagrada",
+        "personagens_em_cena": [
+          "jake",
+          "neytiri"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Neytiri lhe ensinou a ver. E, pela primeira vez, Jake pertencia a algum lugar."
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "ato": 2,
+      "ordem": 6,
+      "funcao_retencao": "escalada",
+      "emocao": "furia",
+      "tempo_s": 6,
+      "loop": {
+        "abre": [
+          "guerra-iminente"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "maquinas humanas derrubando arvores ancestrais em chamas",
+        "ambiente": "floresta devastada",
+        "personagens_em_cena": [
+          "quaritch"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Mas os humanos vieram pelo tesouro. E o tesouro estava embaixo do lar dela."
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "ato": 3,
+      "ordem": 7,
+      "funcao_retencao": "climax",
+      "emocao": "euforia",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [],
+        "fecha": [
+          "lealdade-em-jogo",
+          "guerra-iminente"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "exercito alienigena montado em feras voadoras contra naves",
+        "ambiente": "ceu de Pandora",
+        "personagens_em_cena": [
+          "jake",
+          "neytiri",
+          "quaritch"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Jake escolheu seu lado. Liderou os Na'vi contra o ferro e o fogo dos seus."
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "ato": 3,
+      "ordem": 8,
+      "funcao_retencao": "payoff",
+      "emocao": "esperanca",
+      "tempo_s": 8,
+      "loop": {
+        "abre": [],
+        "fecha": [
+          "promessa-central",
+          "vinculo-neytiri"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "corpo humano sendo deixado para tras enquanto os olhos alienigenas se abrem",
+        "ambiente": "arvore das almas",
+        "personagens_em_cena": [
+          "jake",
+          "neytiri"
+        ],
+        "look_sugerido": null
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "No fim, ele deixou de ser humano. E nasceu, de olhos abertos, no mundo que escolheu."
+        }
+      ]
+    }
+  ]
+}

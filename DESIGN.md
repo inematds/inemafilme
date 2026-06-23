@@ -105,7 +105,7 @@ look_padrao: cinema-dramatico
       "funcao_retencao": "cold_open",   // cold_open|promessa|escalada|virada|climax|respiro|payoff|gancho_proximo
       "emocao": "tensao",               // tensao|medo|melancolia|esperanca|euforia|misterio|ternura|furia
       "tempo_s": 8,
-      "loop": { "abre": "promessa-central", "fecha": null },  // o que esta cena pergunta / responde
+      "loop": { "abre": ["promessa-central"], "fecha": [] },  // listas: um beat pode abrir/fechar varios loops
       "falas": [
         { "quem": "narrador", "texto": "Em 2154, a Terra está morta..." }
       ],
