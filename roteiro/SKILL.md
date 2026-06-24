@@ -1,9 +1,9 @@
 ---
-name: story-engine
-description: Transforma um assunto OU um roteiro numa historia estruturada para retencao (historia.md + historia.json), no contrato inemafilme.historia/v1. Agnostico de render. Use quando o usuario pedir para criar/estruturar a historia de um filme/episodio, transformar um assunto em roteiro com ganchos e arco, ou preparar a historia para o sistema de filme (inemafilme) ou para o inemaref. NAO renderiza video.
+name: roteiro
+description: Transforma um assunto OU uma historia bruta num ROTEIRO estruturado para retencao (historia.md + historia.json), no contrato inemafilme.historia/v1. Agnostico de render. Use quando o usuario pedir para criar/escrever/estruturar o ROTEIRO ou a HISTORIA de um filme/episodio, transformar um assunto em historia com ganchos e arco (promessa central + loops), ou preparar a historia para o sistema de filme (inemafilme) ou para o inemaref. Gatilhos: 'cria o roteiro do filme', 'roteiro do episodio', 'a historia do filme X', 'estrutura a historia', 'roteiro com ganchos/retencao', 'roteiro pra inemafilme/pixflow'. NAO renderiza video.
 ---
 
-# story-engine
+# roteiro
 
 Produz a `historia` (o contrato que liga tudo). **Não renderiza.** Quem renderiza
 é o skill `filme` (pixflow) ou o inemaref.

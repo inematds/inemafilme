@@ -14,7 +14,7 @@ determinístico, **sem IA de vídeo**). A entrada é flexível:
 - Você passa **referências/imagens** → ele usa; senão **gera** (como o inemaref).
 
 O sistema é dividido em **três peças** com responsabilidades isoladas. A peça
-central — o `story-engine` — é a "máquina de história": pensa retenção e
+central — o `roteiro` — é a "máquina de história": pensa retenção e
 narrativa, e **não sabe nada de render**. Isso a torna reutilizável (o inemaref
 poderá chamá-la no futuro) e mantém o renderizador burro e trocável.
 
@@ -23,7 +23,7 @@ poderá chamá-la no futuro) e mantém o renderizador burro e trocável.
 | Peça | Responsabilidade | Sabe de render? |
 |------|------------------|-----------------|
 | **contrato `historia`** | O formato neutro que liga tudo (a "junta") | — |
-| **`story-engine`** (skill) | assunto/roteiro → `historia.md` + `historia.json`, com engenharia de retenção | **Não** |
+| **`roteiro`** (skill) | assunto/roteiro → `historia.md` + `historia.json`, com engenharia de retenção | **Não** |
 | **`filme`** (skill) | `historia.json` → filme narrado no pixflow | Sim (pixflow) |
 
 **Roadmap de versões:**
@@ -49,7 +49,7 @@ Formato **híbrido**, derivado e validado pelo `story.md` do `animabook`
 A regra de ouro: **toda fala carrega um campo `quem`** (`narrador` na v1; na v2
 abre pra `jake`, `neytiri`...). Essa é a ponte v1→v2 — adicionar vozes de
 personagem não exige reengenharia. E a **cena é descrita, não dirigida**: o
-`story-engine` diz *o que se vê e a emoção*; o `filme` decide câmera/look/prompt.
+`roteiro` diz *o que se vê e a emoção*; o `filme` decide câmera/look/prompt.
 Assim o mesmo `historia.json` pode ser renderizado por pixflow hoje, por HQ do
 inemaref, ou por IA de vídeo amanhã.
 
@@ -120,7 +120,7 @@ look_padrao: cinema-dramatico
 }
 ```
 
-**Campos que o animabook NÃO tinha e o `story-engine` adiciona:**
+**Campos que o animabook NÃO tinha e o `roteiro` adiciona:**
 `promessa_central`, `funcao_retencao`, `emocao`, `tempo_s`, `quem` por fala,
 `loop` (abre/fecha), `personagens` (elenco), e o cabeçalho narrativo.
 
@@ -128,7 +128,7 @@ look_padrao: cinema-dramatico
 
 O que faz alguém continuar assistindo não é "o que está acontecendo", é **o que
 ainda não aconteceu** — a pessoa fica porque foi *prometido* que algo vem. Esse é
-o coração do `story-engine`, não um detalhe:
+o coração do `roteiro`, não um detalhe:
 
 - **Promessa central (`promessa_central`):** uma única **pergunta dramática**
   plantada nos primeiros segundos e respondida só no fim ("Jake vai abandonar os
@@ -151,7 +151,7 @@ manter a promessa central aberta até o `payoff` final.
 Isso é **mecanicamente verificado** pelo validador (§4): sem promessa, com
 "deserto" sem loop aberto, ou com a promessa fechada cedo demais → reprova.
 
-## 4. `story-engine` (sub-projeto 1 — o foco da v1)
+## 4. `roteiro` (sub-projeto 1 — o foco da v1)
 
 **Responsabilidade única:** transformar *assunto OU roteiro* em uma `historia`
 estruturada para reter atenção. Não renderiza nada.
@@ -246,7 +246,7 @@ herdam a descrição travada. O `filme` injeta a referência nos prompts flux.
 - v1 = **filme único fechado**; recorrência fica pra v3.
 - v1 = **só narrador**; áudio modelado como lista de `falas` com `quem`.
 - Formato do contrato = **híbrido** (md humano → json compilado).
-- Ordem de construção = **fundação primeiro** (contrato → story-engine → filme).
+- Ordem de construção = **fundação primeiro** (contrato → roteiro → filme).
 - Campos do contrato em **português**. ✔
 - **Música + SFX = parte da v1** (não opcional; áudio é barato, itera por re-mux). ✔
 - **Prioridade de direção v1 = movimento constante + alta troca de imagem** (sem
@@ -281,21 +281,21 @@ um beat de personagem falando pode ir no SkyReels A2V sem mudar o contrato.
 ~/projetos/inemafilme/
   DESIGN.md            ← este documento
   contrato/            ← spec do formato historia (md+json) + exemplo + validador
-  story-engine/        ← skill 1 (SKILL.md, scripts/, knowledge/)
+  roteiro/        ← skill 1 (SKILL.md, scripts/, knowledge/)
   filme/               ← skill 2 (SKILL.md, scripts/)
   README.md
 ```
 
-- `story-engine/` e `filme/` symlinkados em `~/.claude/skills/` → chamáveis de
-  qualquer projeto (é o que torna o `story-engine` **compartilhado**).
-- `story-engine/` autocontido → pode virar repo próprio depois, sem reescrever.
+- `roteiro/` e `filme/` symlinkados em `~/.claude/skills/` → chamáveis de
+  qualquer projeto (é o que torna o `roteiro` **compartilhado**).
+- `roteiro/` autocontido → pode virar repo próprio depois, sem reescrever.
 - **Filmes gerados** vão pra `~/projetos/output/<id>/` (regra global); o repo
   guarda só o código.
 
 ## 11. Ordem de construção (specs seguintes)
 
 1. **Contrato `historia`** — fechar md+json + validador + exemplo (pequeno).
-2. **`story-engine` v1** — knowledge colhido + compilar + validar (este é o
+2. **`roteiro` v1** — knowledge colhido + compilar + validar (este é o
    primeiro plano de implementação).
 3. **`filme` v1** — spec próprio (direção→imagens→render→narração).
 4. *(depois)* migração do `inemaref-serie` pra consumir o contrato; v2/v3.
