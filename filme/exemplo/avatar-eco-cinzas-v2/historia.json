@@ -1,0 +1,339 @@
+{
+  "versao_contrato": "inemafilme.historia/v1",
+  "id": "avatar-eco-cinzas",
+  "titulo": "Avatar — O Eco das Cinzas",
+  "logline": "Geracoes apos a guerra, uma jovem Na'vi que ouve o que Eywa esqueceu precisa entrar na zona morta antes que o silencio engula Pandora.",
+  "promessa_central": "Rini vai entrar nas Cinzas e devolver a voz ao que Eywa esqueceu, ou vai se apagar como todos os que entraram antes?",
+  "duracao_alvo_s": 300,
+  "formato": "16:9",
+  "voz_narrador": "bella",
+  "look_padrao": "cinema-dramatico",
+  "personagens": [
+    {
+      "nome": "rini",
+      "aparencia": "jovem Na'vi de 17 anos, pele azul com manchas de cinza de nascenca no rosto e bracos, olhos ambar claros, trancas com fios de metal recolhidos das ruinas"
+    },
+    {
+      "nome": "saria",
+      "aparencia": "Tsahik anciã Na'vi, cega, tatuagens brancas pelo corpo, cabelos longos prateados, postura serena"
+    },
+    {
+      "nome": "neto",
+      "aparencia": "jovem Na'vi caçador, forte, olhos que perderam o brilho (vazios, sem Eywa), expressao ausente"
+    },
+    {
+      "nome": "o-apagado",
+      "aparencia": "avatar humano abandonado ha geracoes, corpo Na'vi palido e preservado por cabos de maquina, luz fraca azul nos olhos, meio fundido ao metal"
+    }
+  ],
+  "beats": [
+    {
+      "id": "b01",
+      "ato": 1,
+      "ordem": 1,
+      "funcao_retencao": "cold_open",
+      "emocao": "tensao",
+      "tempo_s": 22,
+      "loop": {
+        "abre": [
+          "o-que-pulsa"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "floresta petrificada e cinzenta ate onde a vista alcanca, carcacas enormes de maquinas humanas enferrujadas afundando na terra morta, e um brilho fraco pulsando muito fundo no solo",
+        "ambiente": "as Cinzas, zona morta de Pandora",
+        "personagens_em_cena": [],
+        "look_sugerido": "noir-film"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Pandora sobreviveu aos homens. Mas ficou com uma cicatriz que nunca fechou."
+        },
+        {
+          "quem": "narrador",
+          "texto": "Chamam de Cinzas. O unico lugar onde Eywa, a mae de tudo, ficou surda. Onde nada cresce, nada canta. E onde, bem la no fundo, alguma coisa comecou a pulsar de novo."
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "ato": 1,
+      "ordem": 2,
+      "funcao_retencao": "promessa",
+      "emocao": "misterio",
+      "tempo_s": 30,
+      "loop": {
+        "abre": [
+          "promessa-central"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "jovem Na'vi de pe na fronteira exata entre a floresta viva luminescente e a terra morta cinzenta, a cabeca inclinada como quem escuta algo que ninguem mais ouve",
+        "ambiente": "borda das Cinzas ao entardecer",
+        "personagens_em_cena": [
+          "rini"
+        ],
+        "look_sugerido": "sonho-etereo"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Rini nasceu marcada. Manchas de cinza na pele, como se as Cinzas a tivessem tocado antes de ela nascer."
+        },
+        {
+          "quem": "narrador",
+          "texto": "E desde sempre ela ouvia. Um sussurro vindo da zona morta, baixinho, chamando. Todos diziam que era loucura. Ninguem mais escutava nada."
+        },
+        {
+          "quem": "rini",
+          "texto": "Nao e loucura. Tem alguem ali. E esta sozinho."
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "ato": 1,
+      "ordem": 3,
+      "funcao_retencao": "escalada",
+      "emocao": "medo",
+      "tempo_s": 32,
+      "loop": {
+        "abre": [
+          "neto-vazio"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "jovem caçador Na'vi saindo cambaleante da neblina cinzenta, andando, mas com os olhos apagados e sem reconhecer ninguem, enquanto ao fundo arvores vivas comecam a secar e empalidecer",
+        "ambiente": "aldeia na borda das Cinzas",
+        "personagens_em_cena": [
+          "neto",
+          "rini"
+        ],
+        "look_sugerido": "cinema-dramatico"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Naquele ano, as Cinzas avancaram. Arvores que cantavam ha mil estacoes secaram de uma vez."
+        },
+        {
+          "quem": "narrador",
+          "texto": "E Neto, o amigo de Rini, entrou na zona morta atras de respostas. Voltou andando. Mas voltou vazio: os olhos sem Eywa, sem nome, sem ninguem la dentro. Alguma coisa nele tinha ficado para tras."
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "ato": 2,
+      "ordem": 4,
+      "funcao_retencao": "virada",
+      "emocao": "melancolia",
+      "tempo_s": 38,
+      "loop": {
+        "abre": [
+          "entrar-nas-cinzas"
+        ],
+        "fecha": [
+          "o-que-pulsa"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "anciã cega de tatuagens brancas tocando a testa de Rini sob uma arvore-das-almas fraca e tremeluzente, raizes luminosas se estendendo na escuridao",
+        "ambiente": "arvore das almas enfraquecida, a noite",
+        "personagens_em_cena": [
+          "saria",
+          "rini"
+        ],
+        "look_sugerido": "sonho-etereo"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "A anciã Saria, a Tsahik, finalmente contou a verdade que a aldeia escondia ha geracoes."
+        },
+        {
+          "quem": "narrador",
+          "texto": "Para sobreviver a guerra, Eywa fez o impensavel: cortou um galho de si mesma e o deixou para tras nas Cinzas. Um pedaco vivo, abandonado, esquecido. E o esquecido nunca perdoou. Agora ele acordou, faminto por ser ouvido, e puxa para dentro todo mundo que entra. So quem carrega a marca pode atravessar e voltar."
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "ato": 2,
+      "ordem": 5,
+      "funcao_retencao": "respiro",
+      "emocao": "ternura",
+      "tempo_s": 28,
+      "loop": {
+        "abre": [
+          "fio-de-saria"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "close das maos da anciã trancando delicadamente um fio prateado do proprio cabelo nas trancas de Rini, Neto vazio sentado ao fundo olhando o nada",
+        "ambiente": "interior quente da maloca, fogueira baixa",
+        "personagens_em_cena": [
+          "saria",
+          "rini",
+          "neto"
+        ],
+        "look_sugerido": "cinema-dramatico"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Antes de partir, Rini se ajoelhou diante de Neto e segurou seu rosto. Ele nao a viu. Mas ela prometeu trazer ele de volta."
+        },
+        {
+          "quem": "narrador",
+          "texto": "A anciã trancou em seu cabelo um fio do proprio cabelo prateado."
+        },
+        {
+          "quem": "saria",
+          "texto": "Quando o silencio comecar a comer quem voce e, toque neste fio. Ele vai te lembrar."
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "ato": 2,
+      "ordem": 6,
+      "funcao_retencao": "escalada",
+      "emocao": "tensao",
+      "tempo_s": 34,
+      "loop": {
+        "abre": [
+          "rini-esquecendo"
+        ],
+        "fecha": []
+      },
+      "cena": {
+        "descricao_visual": "Rini caminhando sozinha fundo nas Cinzas, cercada de maquinas mortas que estalam e despertam fracamente, a silhueta dela comecando a perder cor e contorno como se desbotasse",
+        "ambiente": "coracao das Cinzas, neblina de cinzas suspensa",
+        "personagens_em_cena": [
+          "rini"
+        ],
+        "look_sugerido": "sci-fi-cyberpunk"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "Dentro das Cinzas o sussurro virou voz. E o silencio nao era so falta de som: ele comia as lembrancas."
+        },
+        {
+          "quem": "narrador",
+          "texto": "A cada passo, Rini esquecia um pouco. O nome da mae. O rosto de Neto. O som da floresta. Ate o proprio nome comecou a escorregar das maos dela."
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "ato": 2,
+      "ordem": 7,
+      "funcao_retencao": "virada",
+      "emocao": "misterio",
+      "tempo_s": 38,
+      "loop": {
+        "abre": [
+          "o-apagado-quer-rini"
+        ],
+        "fecha": [
+          "neto-vazio"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "no centro das Cinzas, um avatar humano palido e antigo, meio fundido a cabos de maquina, olhos de luz azul fraca se abrindo na direcao dela, sem agressao, apenas uma solidao imensa",
+        "ambiente": "nucleo das Cinzas, catedral de metal morto",
+        "personagens_em_cena": [
+          "o-apagado",
+          "rini"
+        ],
+        "look_sugerido": "sonho-etereo"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "No coracao da zona morta nao havia monstro. Havia o Apagado: o galho esquecido de Eywa, sozinho ha geracoes, sem ninguem para ouvi-lo."
+        },
+        {
+          "quem": "narrador",
+          "texto": "Foi entao que Rini entendeu Neto. O Apagado nao matava ninguem. Ele so puxava as pessoas para perto, desesperado, para nao ficar so. E agora era a vez dela."
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "ato": 3,
+      "ordem": 8,
+      "funcao_retencao": "climax",
+      "emocao": "furia",
+      "tempo_s": 44,
+      "loop": {
+        "abre": [],
+        "fecha": [
+          "rini-esquecendo",
+          "fio-de-saria",
+          "o-apagado-quer-rini",
+          "entrar-nas-cinzas"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "Rini quase desbotada por completo, no ultimo instante agarrando o fio prateado nas trancas, uma onda de luz e memoria explodindo dela, enquanto em vez de recuar ela avanca e encosta a testa na testa do Apagado",
+        "ambiente": "nucleo das Cinzas em colapso de luz",
+        "personagens_em_cena": [
+          "rini",
+          "o-apagado"
+        ],
+        "look_sugerido": "acao-epico"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "O esquecimento quase a tomou por inteiro. No ultimo instante, os dedos dela encontraram o fio da anciã. E ela lembrou quem era."
+        },
+        {
+          "quem": "narrador",
+          "texto": "Entao Rini fez o que ninguem em geracoes teve coragem de fazer: em vez de fugir do Apagado, ela o ouviu. Encostou a testa na dele e cantou de volta o nome que Eywa havia cortado."
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "ato": 3,
+      "ordem": 9,
+      "funcao_retencao": "payoff",
+      "emocao": "esperanca",
+      "tempo_s": 34,
+      "loop": {
+        "abre": [],
+        "fecha": [
+          "promessa-central"
+        ]
+      },
+      "cena": {
+        "descricao_visual": "a zona morta se reacendendo em filamentos de luz, brotos verdes nascendo entre as carcacas enferrujadas, e ao longe Neto erguendo a cabeca com os olhos voltando a brilhar",
+        "ambiente": "as Cinzas ao amanhecer, vida voltando",
+        "personagens_em_cena": [
+          "rini",
+          "neto"
+        ],
+        "look_sugerido": "sonho-etereo"
+      },
+      "falas": [
+        {
+          "quem": "narrador",
+          "texto": "As Cinzas voltaram a sussurrar. Mas agora em coro: Eywa ouvia de novo o pedaco de si que tinha abandonado."
+        },
+        {
+          "quem": "narrador",
+          "texto": "O Apagado se desfez em paz. Neto abriu os olhos, e dessa vez havia alguem ali. E onde so houve silencio por geracoes, uma unica folha verde nasceu. Rini ainda carrega a marca das cinzas. Mas agora ela sabe: marca nao e maldicao. E uma ponte."
+        }
+      ]
+    }
+  ]
+}
