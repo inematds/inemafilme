@@ -132,7 +132,7 @@
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Três peças isoladas, uma "junta" no meio</h2>
-  <p class="sub">O `inemafilme` não é um monólito: separa "pensar a história" de "renderizar o vídeo" através de um contrato de dados neutro. Isso deixa o roteiro reutilizável (por outros sistemas, como o inemaref) e o renderizador trocável.</p>
+  <p class="sub">O <code>inemafilme</code> não é um monólito: separa "pensar a história" de "renderizar o vídeo" através de um contrato de dados neutro. Isso deixa o roteiro reutilizável (por outros sistemas, como o inemaref) e o renderizador trocável.</p>
   <div class="grid g3">
     <div class="card"><h3>📜 Contrato <code>historia</code></h3><p>Formato híbrido md (humano, editável) + json (máquina). Agnóstico de render — o mesmo <code>historia.json</code> pode virar filme pixflow, HQ ou, no futuro, vídeo por IA.</p></div>
     <div class="card"><h3>✍️ Skill <code>roteiro</code></h3><p>Assunto ou roteiro bruto → <code>historia.md</code>/<code>.json</code> validados, com engenharia de retenção: promessa central, loops abertos/fechados, escalada, payoff. Não renderiza nada.</p></div>
@@ -192,7 +192,7 @@ pip install -r requirements-dev.txt</pre></div>
     <h3>Escreva a história (skill <code>roteiro</code>)</h3>
     <p>Dê um assunto (o agente inventa a história completa) ou um roteiro pronto (ele segmenta em beats sem inventar enredo). O agente lê <code>roteiro/knowledge/</code> e escreve <code>historia.md</code> seguindo a gramática do contrato.</p>
 <pre><span class="c"># o agente escreve, seguindo contrato/CONTRATO.md</span>
-<span class="k">$EDITOR historia.md</span>  <span class="c"># frontmatter + beats com <!-- beat/loop/cena --></span></pre>
+<span class="k">$EDITOR historia.md</span>  <span class="c"># frontmatter + beats com &lt;!-- beat/loop/cena --&gt;</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
